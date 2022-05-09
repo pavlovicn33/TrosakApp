@@ -76,7 +76,16 @@ WSGI_APPLICATION = 'trosak.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        "default": {
+        "ENGINE": "mssql",
+        "NAME": "DATABASE_NAME",
+        "USER": "USER_NAME",
+        "PASSWORD": "PASSWORD",
+        "HOST": "HOST_ADDRESS",
+        "PORT": "1433",
+        "OPTIONS": {"driver": "ODBC Driver 17 for SQL Server", 
+        },
+    },
     }
 }
 
