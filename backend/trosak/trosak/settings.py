@@ -37,7 +37,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'src.users'
 ]
+
+AUTH_USER_MODEL = "users.User"
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -75,17 +78,12 @@ WSGI_APPLICATION = 'trosak.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        "default": {
-        "ENGINE": "mssql",
-        "NAME": "DATABASE_NAME",
-        "USER": "USER_NAME",
-        "PASSWORD": "PASSWORD",
-        "HOST": "HOST_ADDRESS",
-        "PORT": "1433",
-        "OPTIONS": {"driver": "ODBC Driver 17 for SQL Server", 
-        },
-    },
+        'ENGINE': 'django.db.backends.mysql',
+        "NAME": "db",
+        "USER": "user",
+        "PASSWORD": "example",
+        "HOST": "127.0.0.1",
+        "PORT": 3306,
     }
 }
 
