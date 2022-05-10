@@ -5,5 +5,5 @@ class CategoryManager():
         if not name:
             raise ValueError("The given name must be set")
         name = self.normalize_name(name)
-        user = self.model(name=name, **extra_fields)
-        return user
+        name = self.model(name=name, **extra_fields)
+        return name
