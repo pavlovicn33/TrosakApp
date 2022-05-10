@@ -1,12 +1,10 @@
 from django.db import models
-import uuid
+
+# Create your models here.
 
 class Category(models.Model):
     name = models.CharField(max_length=100)
-    description = models.CharField(max_length=500, default="")
-
-    USERNAME_FIELD = "name"
-    REQUIRED_FIELDS = []
+    description = models.CharField(max_length=500)
 
 
     def __str__(self):
